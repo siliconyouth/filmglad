@@ -24,8 +24,8 @@ export default async function DonatePage({ params }: PageProps) {
   const t = await getTranslations({ locale, namespace: "donate" });
 
   return (
-    <div className="pt-24">
-      <section className="py-16 bg-gradient-to-b from-black/50 to-background">
+    <div className="pt-24 bg-gradient-to-b from-black/50 to-background">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 text-accent mb-6">
