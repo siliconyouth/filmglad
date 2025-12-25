@@ -59,6 +59,8 @@ export default function DonateButton({
   return (
     <div className={`w-full ${className}`}>
       <PayPalButtons
+        key={amount}
+        forceReRender={[amount]}
         style={{
           layout: "vertical",
           color: "gold",
