@@ -138,12 +138,17 @@
     "cast": "Glumci",
     "producers": "Producenti",
     "cinematographer": "Direktor fotografije",
+    "assistantDirectors": "Asistenti režije",
+    "productionTeam": "Produkcijski tim",
     "screenplay": "scenario",
     "story": "priča",
     "producer": "producent",
     "executiveProducer": "izvršni producent",
     "lineProducer": "linijski producent",
     "directorOfPhotography": "direktor fotografije",
+    "firstAssistantDirector": "prvi asistent režije",
+    "secondAssistantDirector": "drugi asistent režije",
+    "finance": "finansije",
     "as": "kao"
   },
   "footer": {

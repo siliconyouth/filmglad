@@ -54,83 +54,7 @@ export default async function CrewPage({ params }: PageProps) {
           </div>
 
           <div className="space-y-8">
-            {/* Director */}
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
-                  <Clapperboard className="w-6 h-6 text-accent" />
-                </div>
-                <h2 className="text-xl font-bold text-accent uppercase tracking-wider">
-                  {t("director")}
-                </h2>
-              </div>
-              <a
-                href={`https://www.imdb.com/name/${director.imdbId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg font-semibold text-foreground hover:text-accent transition-colors"
-              >
-                {director.name}
-              </a>
-            </div>
-
-            {/* Writers */}
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
-                  <Pen className="w-6 h-6 text-accent" />
-                </div>
-                <h2 className="text-xl font-bold text-accent uppercase tracking-wider">
-                  {t("writers")}
-                </h2>
-              </div>
-              <div className="space-y-2">
-                {writers.map((person) => (
-                  <a
-                    key={person.imdbId}
-                    href={`https://www.imdb.com/name/${person.imdbId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-foreground hover:text-accent transition-colors"
-                  >
-                    <span className="font-semibold">{person.name}</span>
-                    <span className="text-muted ml-2">({t(person.role as "screenplay" | "story")})</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Cast */}
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-accent" />
-                </div>
-                <h2 className="text-xl font-bold text-accent uppercase tracking-wider">
-                  {t("cast")}
-                </h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {cast.map((person) => (
-                  <a
-                    key={person.imdbId}
-                    href={`https://www.imdb.com/name/${person.imdbId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
-                  >
-                    <span className="font-semibold text-foreground">
-                      {person.name}
-                    </span>
-                    <span className="text-muted text-sm">
-                      {t("as")} {person.character}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Producers */}
+            {/* 1. Producers */}
             <div className="p-6 rounded-xl bg-white/5 border border-white/10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
@@ -160,7 +84,57 @@ export default async function CrewPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Cinematographer */}
+            {/* 2. Cast */}
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-accent" />
+                </div>
+                <h2 className="text-xl font-bold text-accent uppercase tracking-wider">
+                  {t("cast")}
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {cast.map((person) => (
+                  <a
+                    key={person.imdbId}
+                    href={`https://www.imdb.com/name/${person.imdbId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                  >
+                    <span className="font-semibold text-foreground">
+                      {person.name}
+                    </span>
+                    <span className="text-muted text-sm">
+                      {t("as")} {person.character}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* 3. Director */}
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <Clapperboard className="w-6 h-6 text-accent" />
+                </div>
+                <h2 className="text-xl font-bold text-accent uppercase tracking-wider">
+                  {t("director")}
+                </h2>
+              </div>
+              <a
+                href={`https://www.imdb.com/name/${director.imdbId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-semibold text-foreground hover:text-accent transition-colors"
+              >
+                {director.name}
+              </a>
+            </div>
+
+            {/* 4. Cinematographer */}
             <div className="p-6 rounded-xl bg-white/5 border border-white/10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
@@ -179,6 +153,32 @@ export default async function CrewPage({ params }: PageProps) {
                 {cinematographer.name}
               </a>
               <span className="text-muted ml-2">({t("directorOfPhotography")})</span>
+            </div>
+
+            {/* 5. Writers */}
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <Pen className="w-6 h-6 text-accent" />
+                </div>
+                <h2 className="text-xl font-bold text-accent uppercase tracking-wider">
+                  {t("writers")}
+                </h2>
+              </div>
+              <div className="space-y-2">
+                {writers.map((person) => (
+                  <a
+                    key={person.imdbId}
+                    href={`https://www.imdb.com/name/${person.imdbId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-foreground hover:text-accent transition-colors"
+                  >
+                    <span className="font-semibold">{person.name}</span>
+                    <span className="text-muted ml-2">({t(person.role as "screenplay" | "story")})</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

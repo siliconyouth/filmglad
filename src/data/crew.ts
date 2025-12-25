@@ -45,6 +45,16 @@ export const cinematographer: Person = {
   role: "directorOfPhotography",
 };
 
+export const assistantDirectors: Person[] = [
+  { name: "Ilija Kovacevic", imdbId: "nm16323980", role: "firstAssistantDirector" },
+  { name: "Aleksandar Ivanovic Aladin", imdbId: "nm16650803", role: "secondAssistantDirector" },
+  { name: "Lisa Katarina Kovacevic", imdbId: "nm17931921", role: "secondAssistantDirector" },
+];
+
+export const productionTeam: Person[] = [
+  { name: "Lisa Katarina Kovacevic", imdbId: "nm17931921", role: "finance" },
+];
+
 export function getImdbPersonUrl(imdbId: string): string {
   return `https://www.imdb.com/name/${imdbId}`;
 }

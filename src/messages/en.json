@@ -138,12 +138,17 @@
     "cast": "Cast",
     "producers": "Producers",
     "cinematographer": "Cinematographer",
+    "assistantDirectors": "Assistant Directors",
+    "productionTeam": "Production Team",
     "screenplay": "screenplay",
     "story": "story",
     "producer": "producer",
     "executiveProducer": "executive producer",
     "lineProducer": "line producer",
     "directorOfPhotography": "director of photography",
+    "firstAssistantDirector": "first assistant director",
+    "secondAssistantDirector": "second assistant director",
+    "finance": "finance",
     "as": "as"
   },
   "footer": {
