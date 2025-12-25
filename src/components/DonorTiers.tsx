@@ -9,8 +9,9 @@ import PayPalProvider from "./PayPalProvider";
 const tiers = [
   { id: "supporter", amount: 100, icon: Medal, color: "from-gray-500 to-gray-700" },
   { id: "patron", amount: 250, icon: Star, color: "from-blue-500 to-blue-700" },
-  { id: "producer", amount: 500, icon: Award, color: "from-purple-500 to-purple-700" },
+  { id: "associate", amount: 500, icon: Award, color: "from-purple-500 to-purple-700" },
   { id: "executive", amount: 1000, icon: Crown, color: "from-amber-500 to-amber-700" },
+  { id: "producer", amount: 2500, icon: Crown, color: "from-red-500 to-red-700" },
 ];
 
 export default function DonorTiers() {
@@ -43,7 +44,7 @@ export default function DonorTiers() {
     <PayPalProvider>
       <div className="space-y-8">
         {/* Tier cards with perks */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {tiers.map((tier) => {
             const Icon = tier.icon;
             const perks = getPerks(tier.id);

@@ -68,23 +68,28 @@
   "tiers": {
     "supporter": {
       "name": "Podržavalac",
-      "amount": "€100",
+      "amount": "€100+",
       "perks": ["Vaše ime u odjavnoj špici", "Digitalna zahvalnica"]
     },
     "patron": {
       "name": "Patron",
-      "amount": "€250",
+      "amount": "€250+",
       "perks": ["Digitalni poster filma", "Ime u odjavnoj špici", "Fotografije sa snimanja"]
     },
-    "producer": {
-      "name": "Producent",
-      "amount": "€500",
+    "associate": {
+      "name": "Pridruženi producent",
+      "amount": "€500+",
       "perks": ["Poziv na privatnu projekciju", "Digitalni poster filma", "Ime u odjavnoj špici", "Potpisano pismo zahvalnosti"]
     },
     "executive": {
       "name": "Izvršni producent",
-      "amount": "€1000",
-      "perks": ["Upoznajte tim filma", "Potpisani poster", "Poziv na privatnu projekciju", "Ime u odjavnoj špici", "Producentski kredit"]
+      "amount": "€1000+",
+      "perks": ["Upoznajte tim filma", "Potpisani poster", "Poziv na privatnu projekciju", "Ime u odjavnoj špici", "Kredit izvršnog producenta"]
+    },
+    "producer": {
+      "name": "Producent",
+      "amount": "€2500+",
+      "perks": ["Producentski kredit u filmu", "Poziv na set", "Upoznajte tim filma", "Potpisani poster", "Privatna projekcija", "Sve prethodne pogodnosti"]
     }
   },
   "donors": {
