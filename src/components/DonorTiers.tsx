@@ -92,9 +92,8 @@ export default function DonorTiers() {
 
         {/* Custom amount section */}
         <div className="max-w-md mx-auto text-center">
-          <p className="text-muted mb-3">{tDonate("or")}</p>
           <label className="block text-sm text-muted mb-2">
-            {tDonate("customAmount")}
+            {tDonate("customAmount")}:
           </label>
           <div className="relative">
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted text-lg">
