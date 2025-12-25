@@ -34,14 +34,29 @@ export async function generateMetadata({
   const { locale } = await params;
   const messages = await getMessages({ locale });
   const meta = messages.meta as { title: string; description: string };
+  const hero = messages.hero as { subtitle: string; tagline: string };
 
   return {
     title: meta.title,
     description: meta.description,
     openGraph: {
       title: meta.title,
-      description: meta.description,
+      description: `${hero.subtitle} ${hero.tagline}`,
       type: "website",
+      locale: locale === "sr" ? "sr_RS" : "en_US",
+      siteName: meta.title,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: hero.subtitle,
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        sr: "/sr",
+        en: "/en",
+      },
     },
   };
 }

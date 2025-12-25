@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <linearGradient id="gladGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="20%" style="stop-color:#e85d04"/>
+      <stop offset="35%" style="stop-color:#f48c06"/>
+      <stop offset="65%" style="stop-color:#48cae4"/>
+      <stop offset="80%" style="stop-color:#00b4d8"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="#0a0a0a"/>
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Bebas Neue', 'Impact', sans-serif"
+        font-size="140" font-weight="bold"
+        fill="url(#gladGradient)">G</text>
+</svg>
