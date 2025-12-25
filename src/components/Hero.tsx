@@ -13,11 +13,11 @@ export default function Hero() {
       {/* Deep black gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black z-10" />
 
-      {/* Subtle cold steel accent glow */}
+      {/* Orange & Cyan duotone glow */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-40"
         style={{
-          background: "radial-gradient(ellipse at 50% 30%, rgba(156, 163, 175, 0.3) 0%, rgba(55, 65, 81, 0.2) 50%, transparent 80%)",
+          background: "linear-gradient(135deg, rgba(232, 93, 4, 0.3) 0%, transparent 50%, rgba(0, 180, 216, 0.3) 100%)",
         }}
       />
 

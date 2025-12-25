@@ -2,13 +2,14 @@
 
 :root {
   --background: #0a0a0a;
-  --foreground: #e5e7eb;
-  --accent: #6b7280;
-  --accent-dark: #374151;
-  --accent-light: #9ca3af;
-  --steel: #4a5568;
-  --muted: #4b5563;
-  --silver: #d1d5db;
+  --foreground: #f5f5f5;
+  --accent: #00b4d8;
+  --accent-dark: #0077b6;
+  --accent-light: #48cae4;
+  --orange: #e85d04;
+  --orange-light: #f48c06;
+  --muted: #4a4a4a;
+  --silver: #c0c0c0;
 }
 
 @theme inline {
@@ -68,33 +69,32 @@ html {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Dramatic gradient text - Gone Girl cold desaturated */
+/* Dramatic gradient text - Orange & Cyan duotone */
 .gradient-text {
   background: linear-gradient(
-    180deg,
-    #d1d5db 0%,
-    #9ca3af 25%,
-    #6b7280 50%,
-    #4a5568 75%,
-    #374151 100%
+    135deg,
+    #f48c06 0%,
+    #e85d04 25%,
+    #00b4d8 75%,
+    #0077b6 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 60px rgba(107, 114, 128, 0.3)) drop-shadow(0 0 100px rgba(55, 65, 81, 0.2));
+  filter: drop-shadow(0 0 60px rgba(232, 93, 4, 0.4)) drop-shadow(0 0 80px rgba(0, 180, 216, 0.3));
 }
 
-/* Cold steel glow effect */
+/* Orange cyan glow effect */
 .glow-red {
-  box-shadow: 0 0 25px rgba(107, 114, 128, 0.4),
-              0 0 50px rgba(55, 65, 81, 0.3);
+  box-shadow: 0 0 25px rgba(0, 180, 216, 0.5),
+              0 0 50px rgba(232, 93, 4, 0.3);
 }
 
-/* Glass effect - cold clinical */
+/* Glass effect - dark with cyan tint */
 .glass {
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(107, 114, 128, 0.15);
+  border: 1px solid rgba(0, 180, 216, 0.2);
 }
 
 /* Subtle film grain texture */
