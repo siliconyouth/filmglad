@@ -1,115 +1,76 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Check, Star, Crown, Award, Medal } from "lucide-react";
 import { useState } from "react";
+import { CreditCard } from "lucide-react";
 import DonateButton from "./DonateButton";
 import PayPalProvider from "./PayPalProvider";
 
-const tiers = [
-  { id: "supporter", amount: 5, icon: Medal, color: "from-gray-600 to-gray-800" },
-  { id: "patron", amount: 25, icon: Star, color: "from-blue-600 to-blue-800" },
-  { id: "producer", amount: 100, icon: Award, color: "from-purple-600 to-purple-800" },
-  { id: "executive", amount: 500, icon: Crown, color: "from-amber-600 to-amber-800" },
-];
+const tierAmounts = [100, 250, 500, 1000, 2500];
 
 export default function DonorTiers() {
-  const t = useTranslations("tiers");
-  const tDonate = useTranslations("donate");
-  const [selectedTier, setSelectedTier] = useState<string | null>(null);
-  const [customAmount, setCustomAmount] = useState<number>(10);
+  const t = useTranslations("donate");
+  const [amount, setAmount] = useState(1000);
+  const [selectedTier, setSelectedTier] = useState<number | null>(1000);
 
-  const getPerks = (tierId: string): string[] => {
-    try {
-      const perks = t.raw(`${tierId}.perks`);
-      return Array.isArray(perks) ? perks : [];
-    } catch {
-      return [];
-    }
+  const handleTierSelect = (tierAmount: number) => {
+    setSelectedTier(tierAmount);
+    setAmount(tierAmount);
+  };
+
+  const handleCustomAmount = (value: string) => {
+    const numValue = parseInt(value) || 1;
+    setAmount(numValue);
+    setSelectedTier(null);
   };
 
   return (
     <PayPalProvider>
-      <div className="space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {tiers.map((tier) => {
-            const Icon = tier.icon;
-            const perks = getPerks(tier.id);
-            const isSelected = selectedTier === tier.id;
-
-            return (
-              <button
-                key={tier.id}
-                onClick={() => {
-                  setSelectedTier(tier.id);
-                  setCustomAmount(tier.amount);
-                }}
-                className={`relative p-6 rounded-xl border-2 transition-all text-left ${
-                  isSelected
-                    ? "border-accent bg-accent/10 scale-105"
-                    : "border-white/10 hover:border-white/30 glass"
-                }`}
-              >
-                <div
-                  className={`w-12 h-12 rounded-lg bg-gradient-to-br ${tier.color} flex items-center justify-center mb-4`}
-                >
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-
-                <h3 className="text-xl font-bold mb-1">{t(`${tier.id}.name`)}</h3>
-                <p className="text-2xl font-bold text-accent mb-4">
-                  {t(`${tier.id}.amount`)}
-                </p>
-
-                <ul className="space-y-2">
-                  {perks.map((perk, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm text-muted">
-                      <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>{perk}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {isSelected && (
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-background" />
-                  </div>
-                )}
-              </button>
-            );
-          })}
+      <div className="max-w-2xl mx-auto">
+        {/* Tier selection */}
+        <div className="flex flex-wrap justify-center gap-3 mb-6">
+          {tierAmounts.map((tierAmount) => (
+            <button
+              key={tierAmount}
+              onClick={() => handleTierSelect(tierAmount)}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                selectedTier === tierAmount
+                  ? "btn-gradient"
+                  : "bg-white/5 border border-white/20 hover:border-accent text-foreground"
+              }`}
+            >
+              €{tierAmount}
+            </button>
+          ))}
         </div>
 
-        <div className="text-center text-muted">
-          <span>{tDonate("or")}</span>
-        </div>
-
-        <div className="max-w-md mx-auto">
-          <label className="block text-sm font-medium mb-2">
-            {tDonate("customAmount")}
+        {/* Custom amount input */}
+        <div className="max-w-xs mx-auto mb-6">
+          <label className="block text-sm text-muted mb-2 text-center">
+            {t("customAmount")}
           </label>
-          <div className="flex gap-4">
-            <div className="relative flex-1">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted">
-                €
-              </span>
-              <input
-                type="number"
-                min="1"
-                value={customAmount}
-                onChange={(e) => {
-                  setCustomAmount(parseInt(e.target.value) || 1);
-                  setSelectedTier(null);
-                }}
-                className="w-full pl-8 pr-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-accent"
-              />
-            </div>
+          <div className="relative">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted text-lg">
+              €
+            </span>
+            <input
+              type="number"
+              min="1"
+              value={amount}
+              onChange={(e) => handleCustomAmount(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:border-accent text-center text-xl font-semibold"
+            />
           </div>
         </div>
 
+        {/* Payment buttons */}
         <div className="max-w-md mx-auto">
+          <div className="flex items-center justify-center gap-2 text-sm text-muted mb-3">
+            <CreditCard className="w-4 h-4" />
+            <span>Card, Debit & PayPal accepted</span>
+          </div>
           <DonateButton
-            amount={customAmount}
+            amount={amount}
             onSuccess={(orderId) => {
               console.log("Donation successful:", orderId);
             }}

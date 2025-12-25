@@ -7,7 +7,7 @@ import { Heart, ArrowRight, CreditCard } from "lucide-react";
 import DonateButton from "./DonateButton";
 import PayPalProvider from "./PayPalProvider";
 
-const tierAmounts = [100, 500, 1000, 2500];
+const tierAmounts = [100, 250, 500, 1000, 2500];
 
 export default function HomeDonateSection() {
   const t = useTranslations("donate");
