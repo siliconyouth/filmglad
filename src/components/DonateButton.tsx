@@ -1,9 +1,9 @@
 "use client";
 
-import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import { PayPalButtons, usePayPalScriptReducer, FUNDING } from "@paypal/react-paypal-js";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { Heart, Check, AlertCircle, Loader2 } from "lucide-react";
+import { Check, AlertCircle, Loader2 } from "lucide-react";
 
 interface DonateButtonProps {
   amount?: number;
@@ -19,7 +19,40 @@ export default function DonateButton({
   const t = useTranslations("donate");
   const [{ isPending }] = usePayPalScriptReducer();
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
+
+  const createOrder = () => {
+    return {
+      intent: "CAPTURE" as const,
+      purchase_units: [
+        {
+          amount: {
+            value: amount.toString(),
+            currency_code: "EUR",
+          },
+          description: "GLAD Film Donation - Mental Health Awareness",
+        },
+      ],
+    };
+  };
+
+  const handleApprove = async (data: unknown, actions: { order?: { capture: () => Promise<{ id?: string }> } }) => {
+    try {
+      const order = await actions.order?.capture();
+      if (order) {
+        setStatus("success");
+        if (order.id) {
+          onSuccess?.(order.id);
+        }
+      }
+    } catch (err) {
+      console.error("Payment error:", err);
+      setStatus("error");
+    }
+  };
+
+  const handleError = () => {
+    setStatus("error");
+  };
 
   if (isPending) {
     return (
@@ -57,55 +90,41 @@ export default function DonateButton({
   }
 
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`w-full space-y-3 ${className}`}>
+      {/* Card/Debit Button */}
       <PayPalButtons
-        key={amount}
+        key={`card-${amount}`}
         forceReRender={[amount]}
+        fundingSource={FUNDING.CARD}
         style={{
-          layout: "vertical",
-          color: "gold",
+          layout: "horizontal",
+          color: "black",
           shape: "rect",
-          label: "donate",
+          label: "pay",
           height: 50,
         }}
-        createOrder={(data, actions) => {
-          return actions.order.create({
-            intent: "CAPTURE",
-            purchase_units: [
-              {
-                amount: {
-                  value: amount.toString(),
-                  currency_code: "EUR",
-                },
-                description: "GLAD Film Donation - Mental Health Awareness",
-              },
-            ],
-          });
+        createOrder={(data, actions) => actions.order.create(createOrder())}
+        onApprove={handleApprove}
+        onError={handleError}
+        onCancel={() => setStatus("idle")}
+      />
+
+      {/* PayPal Button */}
+      <PayPalButtons
+        key={`paypal-${amount}`}
+        forceReRender={[amount]}
+        fundingSource={FUNDING.PAYPAL}
+        style={{
+          layout: "horizontal",
+          color: "gold",
+          shape: "rect",
+          label: "paypal",
+          height: 50,
         }}
-        onApprove={async (data, actions) => {
-          try {
-            const order = await actions.order?.capture();
-            if (order) {
-              setStatus("success");
-              setMessage(t("success"));
-              if (order.id) {
-                onSuccess?.(order.id);
-              }
-            }
-          } catch (err) {
-            console.error("Payment error:", err);
-            setStatus("error");
-            setMessage(t("error"));
-          }
-        }}
-        onError={(err) => {
-          console.error("PayPal error:", err);
-          setStatus("error");
-          setMessage(t("error"));
-        }}
-        onCancel={() => {
-          setStatus("idle");
-        }}
+        createOrder={(data, actions) => actions.order.create(createOrder())}
+        onApprove={handleApprove}
+        onError={handleError}
+        onCancel={() => setStatus("idle")}
       />
     </div>
   );
