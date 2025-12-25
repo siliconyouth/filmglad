@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations, useLocale } from "next-intl";
-import { Heart, Film, Mail } from "lucide-react";
+import { Heart, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -16,10 +16,9 @@ export default function Footer() {
           <div>
             <Link
               href={`/${locale}`}
-              className="flex items-center gap-2 text-xl font-bold text-accent mb-4"
+              className="text-2xl font-black tracking-widest uppercase text-white hover:text-accent transition-colors mb-4 inline-block"
             >
-              <Film className="w-6 h-6" />
-              <span>{locale === "sr" ? "GLAD" : "HUNGER"}</span>
+              {locale === "sr" ? "GLAD" : "HUNGER"}
             </Link>
             <p className="text-muted text-sm">
               {t("meta.description")}

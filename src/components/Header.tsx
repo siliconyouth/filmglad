@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import { Film, Globe } from "lucide-react";
+import { Globe } from "lucide-react";
 
 export default function Header() {
   const t = useTranslations();
@@ -19,9 +19,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-2 text-xl font-bold text-accent"
+            className="flex items-center gap-2 text-xl font-black tracking-widest uppercase text-white hover:text-accent transition-colors"
           >
-            <Film className="w-6 h-6" />
             <span>{locale === "sr" ? "GLAD" : "HUNGER"}</span>
           </Link>
 
@@ -46,7 +45,7 @@ export default function Header() {
             </Link>
             <Link
               href={`/${locale}/donate`}
-              className="text-sm font-medium bg-accent text-background px-4 py-2 rounded-lg hover:bg-accent-dark transition-colors"
+              className="text-sm font-semibold bg-accent text-white px-5 py-2 rounded hover:bg-accent-light transition-colors uppercase tracking-wider"
             >
               {t("nav.donate")}
             </Link>
@@ -63,7 +62,7 @@ export default function Header() {
 
             <Link
               href={`/${locale}/donate`}
-              className="md:hidden text-sm font-medium bg-accent text-background px-3 py-1.5 rounded-lg hover:bg-accent-dark transition-colors"
+              className="md:hidden text-sm font-semibold bg-accent text-white px-4 py-2 rounded hover:bg-accent-light transition-colors uppercase tracking-wide"
             >
               {t("nav.donate")}
             </Link>

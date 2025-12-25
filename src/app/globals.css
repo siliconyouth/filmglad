@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #d4a574;
-  --accent-dark: #b8956a;
-  --muted: #6b7280;
+  --background: #000000;
+  --foreground: #f5f5f5;
+  --accent: #c41e3a;
+  --accent-dark: #8b0000;
+  --accent-light: #dc143c;
+  --muted: #4a4a4a;
+  --silver: #c0c0c0;
 }
 
 @theme inline {
@@ -13,7 +15,9 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
   --color-muted: var(--muted);
+  --color-silver: var(--silver);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -31,7 +35,7 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -39,8 +43,8 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted);
-  border-radius: 4px;
+  background: var(--accent-dark);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -60,20 +64,64 @@ html {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Gradient text */
+/* Dramatic gradient text for thriller vibe */
 .gradient-text {
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--accent) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--foreground) 0%,
+    var(--silver) 40%,
+    var(--accent) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 80px rgba(196, 30, 58, 0.3);
 }
 
-/* Glass effect */
+/* Blood red glow effect */
+.glow-red {
+  box-shadow: 0 0 30px rgba(196, 30, 58, 0.4),
+              0 0 60px rgba(139, 0, 0, 0.2);
+}
+
+/* Glass effect - darker for thriller */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 30, 58, 0.2);
+}
+
+/* Subtle film grain texture */
+.film-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Vignette effect */
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* Dramatic title styling */
+.title-dramatic {
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
