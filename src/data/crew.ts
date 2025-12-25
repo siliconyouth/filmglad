@@ -33,7 +33,7 @@ export const cast: Person[] = [
 export const producers: Person[] = [
   { name: "Vladimir Dukelic", imdbId: "nm1687429", role: "producer" },
   { name: "Zeljko Mitrovic", imdbId: "nm2801226", role: "producer" },
-  { name: "Jelica Kovacevic", imdbId: "nm5347021", role: "executiveProducer" },
+  { name: "Jelica Kovacevic", imdbId: "nm5347021", role: "producer" },
   { name: "Nevena Savic", imdbId: "nm6344302", role: "executiveProducer" },
   { name: "Ivica Vidanovic", imdbId: "nm3943006", role: "executiveProducer" },
   { name: "Ilija Kovacevic", imdbId: "nm16323980", role: "lineProducer" },

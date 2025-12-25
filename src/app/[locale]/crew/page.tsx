@@ -45,9 +45,7 @@ export default async function CrewPage({ params }: PageProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-accent hover:text-foreground transition-colors"
             >
-              <svg className="w-5 h-5" viewBox="0 0 64 32" fill="currentColor">
-                <path d="M0 0h8v32H0V0zm12 0h8l4 12 4-12h8v32h-8V12l-4 12-4-12v20h-8V0zm28 0h12c4 0 8 2 8 8v16c0 6-4 8-8 8H40V0zm8 8v16h4V8h-4z" />
-              </svg>
+              <span className="font-bold">IMDb</span>
               <span>{t("imdbLink")}</span>
               <ExternalLink className="w-4 h-4" />
             </a>
