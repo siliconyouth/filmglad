@@ -68,7 +68,7 @@ export default function DonorTiers() {
 
                 <h3 className="text-lg font-bold mb-1">{t(`${tier.id}.name`)}</h3>
                 <p className="text-2xl font-bold text-accent mb-3">
-                  €{tier.amount}
+                  €{tier.amount}+
                 </p>
 
                 <ul className="space-y-1.5">
