@@ -37,7 +37,7 @@ export default function Hero() {
         <div className="animate-fade-in">
           {/* Cinematic title with Bebas Neue */}
           <h1
-            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] leading-none mb-8 gradient-text tracking-[0.2em]"
+            className="text-8xl sm:text-9xl md:text-[11rem] lg:text-[15rem] xl:text-[20rem] leading-none mb-8 gradient-text tracking-tight"
             style={{ fontFamily: "var(--font-bebas), sans-serif" }}
           >
             {t("title")}

@@ -3,25 +3,13 @@
 import { useTranslations } from "next-intl";
 import { Crown, Award, Star, Medal, Heart } from "lucide-react";
 
-interface Donor {
+export interface Donor {
   id: string;
   name: string;
   tier: "executive" | "producer" | "patron" | "supporter";
   date: string;
   anonymous?: boolean;
 }
-
-// Sample donors - in production, this would come from a database
-const sampleDonors: Donor[] = [
-  { id: "1", name: "Marko Petrović", tier: "executive", date: "2024-01-15" },
-  { id: "2", name: "Ana Jovanović", tier: "producer", date: "2024-01-14" },
-  { id: "3", name: "Anonymous", tier: "producer", date: "2024-01-13", anonymous: true },
-  { id: "4", name: "Stefan Nikolić", tier: "patron", date: "2024-01-12" },
-  { id: "5", name: "Jelena Đorđević", tier: "patron", date: "2024-01-11" },
-  { id: "6", name: "Milan Stojanović", tier: "supporter", date: "2024-01-10" },
-  { id: "7", name: "Ivana Pavlović", tier: "supporter", date: "2024-01-09" },
-  { id: "8", name: "Nikola Ilić", tier: "supporter", date: "2024-01-08" },
-];
 
 const tierConfig = {
   executive: {
@@ -54,7 +42,7 @@ interface DonorShowcaseProps {
   donors?: Donor[];
 }
 
-export default function DonorShowcase({ donors = sampleDonors }: DonorShowcaseProps) {
+export default function DonorShowcase({ donors = [] }: DonorShowcaseProps) {
   const t = useTranslations("donors");
   const tTiers = useTranslations("tiers");
 
