@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #f5f5f5;
-  --accent: #32BEC5;
-  --accent-dark: #1f3e5b;
-  --accent-light: #4dd9e0;
-  --teal: #2C525D;
-  --muted: #4a4a4a;
-  --silver: #c0c0c0;
+  --background: #0a0a0a;
+  --foreground: #e5e7eb;
+  --accent: #6b7280;
+  --accent-dark: #374151;
+  --accent-light: #9ca3af;
+  --steel: #4a5568;
+  --muted: #4b5563;
+  --silver: #d1d5db;
 }
 
 @theme inline {
@@ -68,32 +68,33 @@ html {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Dramatic gradient text for thriller vibe - Teal to Cyan */
+/* Dramatic gradient text - Gone Girl cold desaturated */
 .gradient-text {
   background: linear-gradient(
     180deg,
-    #4dd9e0 0%,
-    #32BEC5 30%,
-    #2C525D 70%,
-    #1f3e5b 100%
+    #d1d5db 0%,
+    #9ca3af 25%,
+    #6b7280 50%,
+    #4a5568 75%,
+    #374151 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 80px rgba(50, 190, 197, 0.4)) drop-shadow(0 0 120px rgba(31, 62, 91, 0.4));
+  filter: drop-shadow(0 0 60px rgba(107, 114, 128, 0.3)) drop-shadow(0 0 100px rgba(55, 65, 81, 0.2));
 }
 
-/* Teal cyan glow effect */
+/* Cold steel glow effect */
 .glow-red {
-  box-shadow: 0 0 30px rgba(50, 190, 197, 0.5),
-              0 0 60px rgba(31, 62, 91, 0.4);
+  box-shadow: 0 0 25px rgba(107, 114, 128, 0.4),
+              0 0 50px rgba(55, 65, 81, 0.3);
 }
 
-/* Glass effect - darker for thriller */
+/* Glass effect - cold clinical */
 .glass {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(50, 190, 197, 0.2);
+  border: 1px solid rgba(107, 114, 128, 0.15);
 }
 
 /* Subtle film grain texture */
