@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "GLAD - Film",
+    "description": "Dokumentarni film o borbi sa mentalnim zdravljem i pronalasku nade"
+  },
+  "nav": {
+    "home": "Početna",
+    "donate": "Doniraj",
+    "about": "O filmu",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "GLAD",
+    "subtitle": "Dokumentarni film o borbi i nadi",
+    "tagline": "Priča o preživljavanju, otpornosti i ljudskom duhu",
+    "cta": "Doniraj sada",
+    "watchTrailer": "Pogledaj trejler"
+  },
+  "synopsis": {
+    "title": "O filmu",
+    "content": "GLAD je moćan dokumentarni film koji istražuje kompleksnu temu mentalnog zdravlja kroz intimne priče pojedinaca koji su se suočili sa neviđenim izazovima. Film prati njihova putovanja od očaja do nade, razbijajući stigmu i otvarajući vrata dijalogu o mentalnom zdravlju u našem društvu.",
+    "quote": "\"Glad nije samo nedostatak hrane - to je glad za razumevanjem, povezanošću i nadom.\"",
+    "director": "— Reditelj"
+  },
+  "gallery": {
+    "title": "Galerija"
+  },
+  "trailer": {
+    "title": "Trejler",
+    "watchNow": "Pogledaj trejler"
+  },
+  "donate": {
+    "title": "Podržite film",
+    "subtitle": "Vaša donacija pomaže da se ovaj važan film završi i dopre do publike širom sveta",
+    "mentalHealth": "Deo donacija ide u kampanju za podizanje svesti o mentalnom zdravlju",
+    "thankYou": "Hvala na podršci!",
+    "chooseAmount": "Izaberite iznos",
+    "customAmount": "Drugi iznos",
+    "or": "ili",
+    "processing": "Obrada...",
+    "success": "Hvala na donaciji!",
+    "error": "Došlo je do greške. Pokušajte ponovo."
+  },
+  "tiers": {
+    "supporter": {
+      "name": "Podržavalac",
+      "amount": "€5+",
+      "perks": ["Vaše ime u odjavnoj špici"]
+    },
+    "patron": {
+      "name": "Patron",
+      "amount": "€25+",
+      "perks": ["Digitalni poster filma", "Ime u odjavnoj špici"]
+    },
+    "producer": {
+      "name": "Producent",
+      "amount": "€100+",
+      "perks": ["Poziv na privatnu projekciju", "Digitalni poster filma", "Ime u odjavnoj špici"]
+    },
+    "executive": {
+      "name": "Izvršni producent",
+      "amount": "€500+",
+      "perks": ["Upoznajte tim filma", "Potpisani poster", "Poziv na privatnu projekciju", "Ime u odjavnoj špici"]
+    }
+  },
+  "donors": {
+    "title": "Naši donatori",
+    "subtitle": "Hvala svima koji podržavaju ovaj projekat",
+    "beFirst": "Budite prvi donator!",
+    "anonymous": "Anonimni donator"
+  },
+  "footer": {
+    "rights": "Sva prava zadržana",
+    "mentalHealthNote": "Deo prihoda podržava kampanje za mentalno zdravlje",
+    "contact": "Kontakt"
+  },
+  "language": {
+    "switch": "English"
+  }
+}

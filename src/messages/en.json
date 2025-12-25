@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "HUNGER - Film",
+    "description": "A documentary about the struggle with mental health and finding hope"
+  },
+  "nav": {
+    "home": "Home",
+    "donate": "Donate",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "HUNGER",
+    "subtitle": "A documentary about struggle and hope",
+    "tagline": "A story of survival, resilience, and the human spirit",
+    "cta": "Donate now",
+    "watchTrailer": "Watch trailer"
+  },
+  "synopsis": {
+    "title": "About the film",
+    "content": "HUNGER is a powerful documentary that explores the complex topic of mental health through intimate stories of individuals who have faced unprecedented challenges. The film follows their journeys from despair to hope, breaking down stigma and opening doors to dialogue about mental health in our society.",
+    "quote": "\"Hunger is not just lack of food - it's hunger for understanding, connection, and hope.\"",
+    "director": "— Director"
+  },
+  "gallery": {
+    "title": "Gallery"
+  },
+  "trailer": {
+    "title": "Trailer",
+    "watchNow": "Watch trailer"
+  },
+  "donate": {
+    "title": "Support the film",
+    "subtitle": "Your donation helps complete this important film and reach audiences worldwide",
+    "mentalHealth": "A portion of donations goes to mental health awareness campaigns",
+    "thankYou": "Thank you for your support!",
+    "chooseAmount": "Choose amount",
+    "customAmount": "Custom amount",
+    "or": "or",
+    "processing": "Processing...",
+    "success": "Thank you for your donation!",
+    "error": "An error occurred. Please try again."
+  },
+  "tiers": {
+    "supporter": {
+      "name": "Supporter",
+      "amount": "€5+",
+      "perks": ["Your name in the credits"]
+    },
+    "patron": {
+      "name": "Patron",
+      "amount": "€25+",
+      "perks": ["Digital movie poster", "Name in credits"]
+    },
+    "producer": {
+      "name": "Producer",
+      "amount": "€100+",
+      "perks": ["Private screening invitation", "Digital movie poster", "Name in credits"]
+    },
+    "executive": {
+      "name": "Executive Producer",
+      "amount": "€500+",
+      "perks": ["Meet the team", "Signed poster", "Private screening invitation", "Name in credits"]
+    }
+  },
+  "donors": {
+    "title": "Our donors",
+    "subtitle": "Thank you to everyone supporting this project",
+    "beFirst": "Be the first donor!",
+    "anonymous": "Anonymous donor"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "mentalHealthNote": "A portion of proceeds supports mental health campaigns",
+    "contact": "Contact"
+  },
+  "language": {
+    "switch": "Srpski"
+  }
+}
