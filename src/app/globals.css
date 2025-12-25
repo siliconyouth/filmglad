@@ -3,9 +3,10 @@
 :root {
   --background: #000000;
   --foreground: #f5f5f5;
-  --accent: #c41e3a;
-  --accent-dark: #8b0000;
-  --accent-light: #dc143c;
+  --accent: #d41212;
+  --accent-dark: #8b0033;
+  --accent-light: #ff2a2a;
+  --purple: #4a0033;
   --muted: #4a4a4a;
   --silver: #c0c0c0;
 }
@@ -67,31 +68,32 @@ html {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Dramatic gradient text for thriller vibe */
+/* Dramatic gradient text for thriller vibe - Crimson to Deep Purple */
 .gradient-text {
   background: linear-gradient(
     180deg,
-    #dc143c 0%,
-    #8b0000 50%,
-    #4a0011 100%
+    #ff2a2a 0%,
+    #d41212 35%,
+    #8b0033 65%,
+    #4a0033 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 60px rgba(196, 30, 58, 0.5));
+  filter: drop-shadow(0 0 80px rgba(212, 18, 18, 0.4)) drop-shadow(0 0 120px rgba(74, 0, 51, 0.3));
 }
 
-/* Blood red glow effect */
+/* Blood red to purple glow effect */
 .glow-red {
-  box-shadow: 0 0 30px rgba(196, 30, 58, 0.4),
-              0 0 60px rgba(139, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(212, 18, 18, 0.5),
+              0 0 60px rgba(74, 0, 51, 0.3);
 }
 
 /* Glass effect - darker for thriller */
 .glass {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(196, 30, 58, 0.2);
+  border: 1px solid rgba(74, 0, 51, 0.3);
 }
 
 /* Subtle film grain texture */
