@@ -16,10 +16,10 @@ export default async function HomePage({ params }: PageProps) {
   return (
     <>
       <Hero />
-      <Synopsis />
-      <Trailer />
       <HomeDonateSection />
       <DonorShowcase />
+      <Synopsis />
+      <Trailer />
     </>
   );
 }
