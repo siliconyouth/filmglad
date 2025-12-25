@@ -8,6 +8,7 @@
     "donate": "Donate",
     "about": "About",
     "news": "News",
+    "crew": "Cast & Crew",
     "contact": "Contact"
   },
   "hero": {
@@ -126,6 +127,24 @@
         "description": "The acclaimed actor joins the cast of this powerful psychological drama about relationships and unhealed wounds."
       }
     ]
+  },
+  "crew": {
+    "title": "Cast & Crew",
+    "subtitle": "The team behind the film",
+    "viewAll": "View full credits",
+    "imdbLink": "View on IMDb",
+    "director": "Director",
+    "writers": "Writers",
+    "cast": "Cast",
+    "producers": "Producers",
+    "cinematographer": "Cinematographer",
+    "screenplay": "screenplay",
+    "story": "story",
+    "producer": "producer",
+    "executiveProducer": "executive producer",
+    "lineProducer": "line producer",
+    "directorOfPhotography": "director of photography",
+    "as": "as"
   },
   "footer": {
     "rights": "All rights reserved",

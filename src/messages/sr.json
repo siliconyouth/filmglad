@@ -8,6 +8,7 @@
     "donate": "Doniraj",
     "about": "O filmu",
     "news": "Vesti",
+    "crew": "Ekipa",
     "contact": "Kontakt"
   },
   "hero": {
@@ -126,6 +127,24 @@
         "description": "Priznati glumac se pridružuje ekipi ove snažne psihološke drame o odnosima i nezalečenim ranama."
       }
     ]
+  },
+  "crew": {
+    "title": "Ekipa i Glumci",
+    "subtitle": "Tim iza filma",
+    "viewAll": "Pogledaj sve kredite",
+    "imdbLink": "Pogledaj na IMDb",
+    "director": "Režiser",
+    "writers": "Pisci",
+    "cast": "Glumci",
+    "producers": "Producenti",
+    "cinematographer": "Direktor fotografije",
+    "screenplay": "scenario",
+    "story": "priča",
+    "producer": "producent",
+    "executiveProducer": "izvršni producent",
+    "lineProducer": "linijski producent",
+    "directorOfPhotography": "direktor fotografije",
+    "as": "kao"
   },
   "footer": {
     "rights": "Sva prava zadržana",
