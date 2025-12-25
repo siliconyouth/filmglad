@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "HUNGER - Film",
-    "description": "A documentary about the struggle with mental health and finding hope"
+    "description": "A female film without ideology, erotic without eroticism, violent without spectacle"
   },
   "nav": {
     "home": "Home",
@@ -11,16 +11,40 @@
   },
   "hero": {
     "title": "HUNGER",
-    "subtitle": "A documentary about struggle and hope",
-    "tagline": "A story of survival, resilience, and the human spirit",
-    "cta": "Donate now",
+    "subtitle": "A female film without ideology. Erotic without eroticism. Violent without spectacle.",
+    "tagline": "Some hungers never fade — they repeat",
+    "cta": "Support the film",
     "watchTrailer": "Watch trailer"
   },
   "synopsis": {
     "title": "About the film",
-    "content": "HUNGER is a powerful documentary that explores the complex topic of mental health through intimate stories of individuals who have faced unprecedented challenges. The film follows their journeys from despair to hope, breaking down stigma and opening doors to dialogue about mental health in our society.",
-    "quote": "\"Hunger is not just lack of food - it's hunger for understanding, connection, and hope.\"",
-    "director": "— Director"
+    "intro": "HUNGER explores emotional emptiness, trauma, and human hunger — both internal and physical, metaphorical and literal.",
+    "content": "The characters are caught between the luxury of the external world and the chaos of their inner world. The film is about the introspective perception of reality, about how people react to their past traumas and the desire for control or escape from past events.",
+    "themes": {
+      "title": "Hunger is:",
+      "items": [
+        "Hunger for love",
+        "Hunger for validation",
+        "Hunger for identity",
+        "Hunger to see and acknowledge the truth"
+      ]
+    },
+    "style": "Everything is reduced to body, space, and repetition. The repetitions are not mistakes — they are a structural diagnosis of trauma.",
+    "quote": "\"Some hungers never fade — they repeat\"",
+    "director": "— Director",
+    "closing": "This is a film that is not explained — but lived through."
+  },
+  "about": {
+    "title": "Vision",
+    "narrative": {
+      "title": "Structure and narration",
+      "content": "A non-linear narrative with flashbacks showing parallel or contrasting events — psychological truth, not linear history. Repeated motifs of pool scenes, refrigerator, kitchen, and drinks emphasize the obsessive need for control and symbolic hunger."
+    },
+    "sound": {
+      "title": "Silence and music",
+      "content": "Music is external, often in contrast with the silence of interior spaces. Silence symbolizes introspective emptiness, while external music represents the illusory glamour of the world."
+    },
+    "essence": "HUNGER is a film about wounds of the soul and love that ultimately restores the masculine and feminine principle. Dangerous and uncomfortable. An intelligent film."
   },
   "gallery": {
     "title": "Gallery"

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "GLAD - Film",
-    "description": "Dokumentarni film o borbi sa mentalnim zdravljem i pronalasku nade"
+    "description": "Ženski film bez ideologije, erotski bez erotike, nasilan bez spektakla"
   },
   "nav": {
     "home": "Početna",
@@ -11,16 +11,40 @@
   },
   "hero": {
     "title": "GLAD",
-    "subtitle": "Dokumentarni film o borbi i nadi",
-    "tagline": "Priča o preživljavanju, otpornosti i ljudskom duhu",
-    "cta": "Doniraj sada",
+    "subtitle": "Ženski film bez ideologije. Erotski bez erotike. Nasilan bez spektakla.",
+    "tagline": "Neke gladi se nikada ne gase — one se ponavljaju",
+    "cta": "Podržite film",
     "watchTrailer": "Pogledaj trejler"
   },
   "synopsis": {
     "title": "O filmu",
-    "content": "GLAD je moćan dokumentarni film koji istražuje kompleksnu temu mentalnog zdravlja kroz intimne priče pojedinaca koji su se suočili sa neviđenim izazovima. Film prati njihova putovanja od očaja do nade, razbijajući stigmu i otvarajući vrata dijalogu o mentalnom zdravlju u našem društvu.",
-    "quote": "\"Glad nije samo nedostatak hrane - to je glad za razumevanjem, povezanošću i nadom.\"",
-    "director": "— Reditelj"
+    "intro": "GLAD istražuje emocionalnu prazninu, traumu i ljudsku glad — kako unutrašnju, tako i fizičku, metaforički i doslovno.",
+    "content": "Likovi su uhvaćeni između luksuza spoljašnjeg sveta i haosa unutrašnjeg sveta. Film je o introspektivnoj percepciji stvarnosti, o tome kako ljudi reaguju na svoje prošle traume i želju za kontrolom ili begom od prošlih događaja.",
+    "themes": {
+      "title": "Glad je:",
+      "items": [
+        "Glad za ljubavlju",
+        "Glad za potvrdom",
+        "Glad za identitetom",
+        "Glad da se vidi i prizna istina"
+      ]
+    },
+    "style": "Sve je svedeno na telo, prostor i ponavljanje. Ponavljanja nisu greška — ona su strukturalna dijagnoza traume.",
+    "quote": "\"Neke gladi se nikada ne gase — one se ponavljaju\"",
+    "director": "— Reditelj",
+    "closing": "Ovo je film koji se ne objašnjava — nego proživljava."
+  },
+  "about": {
+    "title": "Vizija",
+    "narrative": {
+      "title": "Struktura i naracija",
+      "content": "Non-linearni narativ sa flešbekovima koji pokazuju paralelne ili kontrastne događaje — psihološku istinu, a ne linearnu istoriju. Ponovljeni motivi scene sa bazenom, frižiderom, kuhinjom i pićem naglašavaju obsesivnu potrebu za kontrolom i simboličku glad."
+    },
+    "sound": {
+      "title": "Tišina i muzika",
+      "content": "Muzika je spolja, često u kontrastu sa tišinom unutrašnjih prostora. Tišina simbolizuje introspektivnu prazninu, dok spoljašnja muzika predstavlja iluzorni glamur sveta."
+    },
+    "essence": "GLAD je film o povredama duše i ljubavi koja na kraju vraća muški i ženski princip. Opasan i neudoban. Inteligentan film."
   },
   "gallery": {
     "title": "Galerija"
