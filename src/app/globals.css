@@ -6,6 +6,10 @@
   --accent: #00b4d8;
   --accent-dark: #0077b6;
   --accent-light: #48cae4;
+  --red: #dc2626;
+  --red-dark: #b91c1c;
+  --blue: #1e40af;
+  --blue-light: #3b82f6;
   --orange: #e85d04;
   --orange-light: #f48c06;
   --muted: #4a4a4a;
@@ -70,25 +74,27 @@ html {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Dramatic gradient text - Orange & Cyan duotone */
+/* Dramatic gradient text - Red to Blue with Orange/Cyan midtones */
 .gradient-text {
   background: linear-gradient(
     135deg,
-    #f48c06 0%,
-    #e85d04 25%,
-    #00b4d8 75%,
-    #0077b6 100%
+    #dc2626 0%,
+    #e85d04 20%,
+    #f48c06 35%,
+    #48cae4 65%,
+    #00b4d8 80%,
+    #1e40af 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 60px rgba(232, 93, 4, 0.4)) drop-shadow(0 0 80px rgba(0, 180, 216, 0.3));
+  filter: drop-shadow(0 0 60px rgba(220, 38, 38, 0.4)) drop-shadow(0 0 80px rgba(30, 64, 175, 0.3));
 }
 
-/* Orange cyan glow effect */
+/* Red blue glow effect */
 .glow-red {
-  box-shadow: 0 0 25px rgba(0, 180, 216, 0.5),
-              0 0 50px rgba(232, 93, 4, 0.3);
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.5),
+              0 0 50px rgba(30, 64, 175, 0.3);
 }
 
 /* Glass effect - dark with cyan tint */
