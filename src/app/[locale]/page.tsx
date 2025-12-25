@@ -4,6 +4,7 @@ import Synopsis from "@/components/Synopsis";
 import Trailer from "@/components/Trailer";
 import HomeDonateSection from "@/components/HomeDonateSection";
 import DonorShowcase from "@/components/DonorShowcase";
+import NewsSection from "@/components/NewsSection";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -19,6 +20,7 @@ export default async function HomePage({ params }: PageProps) {
       <HomeDonateSection />
       <DonorShowcase />
       <Synopsis />
+      <NewsSection />
       <Trailer />
     </>
   );

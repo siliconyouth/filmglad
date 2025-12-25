@@ -38,10 +38,10 @@ export default function Header() {
               {t("nav.about")}
             </Link>
             <Link
-              href={`/${locale}#gallery`}
+              href={`/${locale}/news`}
               className="text-sm hover:text-accent transition-colors"
             >
-              {t("gallery.title")}
+              {t("nav.news")}
             </Link>
             <Link
               href={`/${locale}/donate`}

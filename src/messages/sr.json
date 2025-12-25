@@ -7,6 +7,7 @@
     "home": "Početna",
     "donate": "Doniraj",
     "about": "O filmu",
+    "news": "Vesti",
     "contact": "Kontakt"
   },
   "hero": {
@@ -97,6 +98,34 @@
     "subtitle": "Hvala svima koji podržavaju ovaj projekat",
     "beFirst": "Budite prvi donator!",
     "anonymous": "Anonimni donator"
+  },
+  "news": {
+    "title": "U medijima",
+    "subtitle": "Medijsko pokrivanje o filmu",
+    "readMore": "Pročitaj članak",
+    "viewAll": "Pogledaj sve vesti",
+    "articles": [
+      {
+        "title": "Priča o boli i isceljenju: Prva klapa filma GLAD pada u Mionici",
+        "source": "Blic",
+        "description": "Film istražuje teme ženske ranjivosti i unutrašnje snage, ispitujući kako se nosimo sa bolom, ljubavlju i isceljenjm."
+      },
+      {
+        "title": "GLAD - Film o ženi",
+        "source": "K1 Info",
+        "description": "Drama o ženi koja spolja ima sve, ali se iznutra oseća prazno, istražujući traumu i put ka oporavku."
+      },
+      {
+        "title": "Psihološka drama GLAD stiže na evropske festivale 2026",
+        "source": "Telegraf",
+        "description": "Art-house psihološka drama koja istražuje emocionalnu glad i posledice potisnute traume."
+      },
+      {
+        "title": "Zlatan Vidović u glavnoj ulozi novog filma GLAD",
+        "source": "Glas Srpske",
+        "description": "Priznati glumac se pridružuje ekipi ove snažne psihološke drame o odnosima i nezalečenim ranama."
+      }
+    ]
   },
   "footer": {
     "rights": "Sva prava zadržana",

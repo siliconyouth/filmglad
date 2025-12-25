@@ -7,6 +7,7 @@
     "home": "Home",
     "donate": "Donate",
     "about": "About",
+    "news": "News",
     "contact": "Contact"
   },
   "hero": {
@@ -97,6 +98,34 @@
     "subtitle": "Thank you to everyone supporting this project",
     "beFirst": "Be the first donor!",
     "anonymous": "Anonymous donor"
+  },
+  "news": {
+    "title": "In The News",
+    "subtitle": "Media coverage about the film",
+    "readMore": "Read article",
+    "viewAll": "View all news",
+    "articles": [
+      {
+        "title": "A story of pain and healing: First clap of film GLAD falls in Mionica",
+        "source": "Blic",
+        "description": "The film explores themes of female vulnerability and inner strength, examining how we cope with pain, love, and healing."
+      },
+      {
+        "title": "GLAD - A film about a woman",
+        "source": "K1 Info",
+        "description": "Drama about a woman who has everything outwardly but feels empty inside, exploring trauma and the path to recovery."
+      },
+      {
+        "title": "Psychological drama GLAD coming to European festivals in 2026",
+        "source": "Telegraf",
+        "description": "Art-house psychological drama exploring emotional hunger and the consequences of suppressed trauma."
+      },
+      {
+        "title": "Zlatan Vidović in the lead role of new film GLAD",
+        "source": "Glas Srpske",
+        "description": "The acclaimed actor joins the cast of this powerful psychological drama about relationships and unhealed wounds."
+      }
+    ]
   },
   "footer": {
     "rights": "All rights reserved",
