@@ -71,14 +71,14 @@ html {
 .gradient-text {
   background: linear-gradient(
     180deg,
-    var(--foreground) 0%,
-    var(--silver) 40%,
-    var(--accent) 100%
+    #dc143c 0%,
+    #8b0000 50%,
+    #4a0011 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 80px rgba(196, 30, 58, 0.3);
+  filter: drop-shadow(0 0 60px rgba(196, 30, 58, 0.5));
 }
 
 /* Blood red glow effect */
