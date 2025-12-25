@@ -68,23 +68,23 @@
   "tiers": {
     "supporter": {
       "name": "Supporter",
-      "amount": "€5+",
-      "perks": ["Your name in the credits"]
+      "amount": "€100",
+      "perks": ["Your name in the credits", "Digital thank you card"]
     },
     "patron": {
       "name": "Patron",
-      "amount": "€25+",
-      "perks": ["Digital movie poster", "Name in credits"]
+      "amount": "€250",
+      "perks": ["Digital movie poster", "Name in credits", "Behind-the-scenes photos"]
     },
     "producer": {
       "name": "Producer",
-      "amount": "€100+",
-      "perks": ["Private screening invitation", "Digital movie poster", "Name in credits"]
+      "amount": "€500",
+      "perks": ["Private screening invitation", "Digital movie poster", "Name in credits", "Signed thank you letter"]
     },
     "executive": {
       "name": "Executive Producer",
-      "amount": "€500+",
-      "perks": ["Meet the team", "Signed poster", "Private screening invitation", "Name in credits"]
+      "amount": "€1000",
+      "perks": ["Meet the team", "Signed poster", "Private screening invitation", "Name in credits", "Producer credit"]
     }
   },
   "donors": {

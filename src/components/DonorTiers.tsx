@@ -2,52 +2,98 @@
 
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { CreditCard } from "lucide-react";
+import { Check, Star, Crown, Award, Medal, CreditCard } from "lucide-react";
 import DonateButton from "./DonateButton";
 import PayPalProvider from "./PayPalProvider";
 
-const tierAmounts = [100, 250, 500, 1000, 2500];
+const tiers = [
+  { id: "supporter", amount: 100, icon: Medal, color: "from-gray-500 to-gray-700" },
+  { id: "patron", amount: 250, icon: Star, color: "from-blue-500 to-blue-700" },
+  { id: "producer", amount: 500, icon: Award, color: "from-purple-500 to-purple-700" },
+  { id: "executive", amount: 1000, icon: Crown, color: "from-amber-500 to-amber-700" },
+];
 
 export default function DonorTiers() {
-  const t = useTranslations("donate");
+  const t = useTranslations("tiers");
+  const tDonate = useTranslations("donate");
   const [amount, setAmount] = useState(1000);
-  const [selectedTier, setSelectedTier] = useState<number | null>(1000);
+  const [selectedTierId, setSelectedTierId] = useState<string | null>("executive");
 
-  const handleTierSelect = (tierAmount: number) => {
-    setSelectedTier(tierAmount);
+  const getPerks = (tierId: string): string[] => {
+    try {
+      const perks = t.raw(`${tierId}.perks`);
+      return Array.isArray(perks) ? perks : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const handleTierSelect = (tierId: string, tierAmount: number) => {
+    setSelectedTierId(tierId);
     setAmount(tierAmount);
   };
 
   const handleCustomAmount = (value: string) => {
     const numValue = parseInt(value) || 1;
     setAmount(numValue);
-    setSelectedTier(null);
+    setSelectedTierId(null);
   };
 
   return (
     <PayPalProvider>
-      <div className="max-w-2xl mx-auto">
-        {/* Tier selection */}
-        <div className="flex flex-wrap justify-center gap-3 mb-6">
-          {tierAmounts.map((tierAmount) => (
-            <button
-              key={tierAmount}
-              onClick={() => handleTierSelect(tierAmount)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-                selectedTier === tierAmount
-                  ? "btn-gradient"
-                  : "bg-white/5 border border-white/20 hover:border-accent text-foreground"
-              }`}
-            >
-              €{tierAmount}
-            </button>
-          ))}
+      <div className="space-y-8">
+        {/* Tier cards with perks */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {tiers.map((tier) => {
+            const Icon = tier.icon;
+            const perks = getPerks(tier.id);
+            const isSelected = selectedTierId === tier.id;
+
+            return (
+              <button
+                key={tier.id}
+                onClick={() => handleTierSelect(tier.id, tier.amount)}
+                className={`relative p-5 rounded-xl border-2 transition-all text-left ${
+                  isSelected
+                    ? "border-accent bg-accent/10 scale-[1.02]"
+                    : "border-white/10 hover:border-white/30 bg-white/5"
+                }`}
+              >
+                <div
+                  className={`w-10 h-10 rounded-lg bg-gradient-to-br ${tier.color} flex items-center justify-center mb-3`}
+                >
+                  <Icon className="w-5 h-5 text-white" />
+                </div>
+
+                <h3 className="text-lg font-bold mb-1">{t(`${tier.id}.name`)}</h3>
+                <p className="text-2xl font-bold text-accent mb-3">
+                  €{tier.amount}
+                </p>
+
+                <ul className="space-y-1.5">
+                  {perks.map((perk, index) => (
+                    <li key={index} className="flex items-start gap-2 text-sm text-muted">
+                      <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                      <span>{perk}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {isSelected && (
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-background" />
+                  </div>
+                )}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Custom amount input */}
-        <div className="max-w-xs mx-auto mb-6">
-          <label className="block text-sm text-muted mb-2 text-center">
-            {t("customAmount")}
+        {/* Custom amount section */}
+        <div className="max-w-md mx-auto text-center">
+          <p className="text-muted mb-3">{tDonate("or")}</p>
+          <label className="block text-sm text-muted mb-2">
+            {tDonate("customAmount")}
           </label>
           <div className="relative">
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted text-lg">
