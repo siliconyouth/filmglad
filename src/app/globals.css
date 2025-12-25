@@ -3,15 +3,13 @@
 :root {
   --background: #0a0a0a;
   --foreground: #f5f5f5;
-  --accent: #00b4d8;
-  --accent-dark: #0077b6;
-  --accent-light: #48cae4;
-  --red: #dc2626;
-  --red-dark: #b91c1c;
-  --blue: #1e40af;
-  --blue-light: #3b82f6;
+  --accent: #dc2626;
+  --accent-dark: #b91c1c;
+  --accent-light: #ef4444;
   --orange: #e85d04;
   --orange-light: #f48c06;
+  --blue: #1e40af;
+  --blue-light: #3b82f6;
   --muted: #4a4a4a;
   --silver: #c0c0c0;
 }
@@ -55,7 +53,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: var(--orange);
 }
 
 /* Fade in animation */
@@ -91,17 +89,30 @@ html {
   filter: drop-shadow(0 0 60px rgba(220, 38, 38, 0.4)) drop-shadow(0 0 80px rgba(30, 64, 175, 0.3));
 }
 
-/* Red blue glow effect */
+/* Red orange glow effect */
 .glow-red {
   box-shadow: 0 0 25px rgba(220, 38, 38, 0.5),
-              0 0 50px rgba(30, 64, 175, 0.3);
+              0 0 50px rgba(232, 93, 4, 0.3);
 }
 
-/* Glass effect - dark with cyan tint */
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(135deg, #dc2626 0%, #e85d04 50%, #b91c1c 100%);
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.5), 0 0 60px rgba(232, 93, 4, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(220, 38, 38, 0.6), 0 0 80px rgba(232, 93, 4, 0.4);
+}
+
+/* Glass effect - dark with red tint */
 .glass {
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 180, 216, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.2);
 }
 
 /* Subtle film grain texture */

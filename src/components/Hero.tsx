@@ -53,11 +53,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href={`/${locale}/donate`}
-              className="flex items-center gap-3 text-white font-semibold px-10 py-5 rounded transition-all transform hover:scale-105 uppercase tracking-wider text-sm"
-              style={{
-                background: "linear-gradient(135deg, #dc2626 0%, #e85d04 50%, #b91c1c 100%)",
-                boxShadow: "0 0 30px rgba(220, 38, 38, 0.5), 0 0 60px rgba(232, 93, 4, 0.3)",
-              }}
+              className="flex items-center gap-3 font-semibold px-10 py-5 rounded uppercase tracking-wider text-sm btn-gradient"
             >
               <Heart className="w-5 h-5" />
               {t("cta")}

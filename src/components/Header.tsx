@@ -45,7 +45,7 @@ export default function Header() {
             </Link>
             <Link
               href={`/${locale}/donate`}
-              className="text-sm font-semibold bg-accent text-white px-5 py-2 rounded hover:bg-accent-light transition-colors uppercase tracking-wider"
+              className="text-sm font-semibold px-5 py-2 rounded uppercase tracking-wider btn-gradient"
             >
               {t("nav.donate")}
             </Link>
@@ -62,7 +62,7 @@ export default function Header() {
 
             <Link
               href={`/${locale}/donate`}
-              className="md:hidden text-sm font-semibold bg-accent text-white px-4 py-2 rounded hover:bg-accent-light transition-colors uppercase tracking-wide"
+              className="md:hidden text-sm font-semibold px-4 py-2 rounded uppercase tracking-wide btn-gradient"
             >
               {t("nav.donate")}
             </Link>

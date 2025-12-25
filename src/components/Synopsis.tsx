@@ -28,7 +28,7 @@ export default function Synopsis() {
 
           {/* Themes list */}
           <div className="glass rounded-2xl p-8 md:p-12">
-            <h3 className="text-2xl font-semibold text-center mb-8 text-accent">
+            <h3 className="text-2xl font-semibold text-center mb-8 gradient-text">
               {t("themes.title")}
             </h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
