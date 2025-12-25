@@ -1,7 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import Hero from "@/components/Hero";
 import Synopsis from "@/components/Synopsis";
-import Gallery from "@/components/Gallery";
 import Trailer from "@/components/Trailer";
 import HomeDonateSection from "@/components/HomeDonateSection";
 import DonorShowcase from "@/components/DonorShowcase";
@@ -18,7 +17,6 @@ export default async function HomePage({ params }: PageProps) {
     <>
       <Hero />
       <Synopsis />
-      <Gallery />
       <Trailer />
       <HomeDonateSection />
       <DonorShowcase />
