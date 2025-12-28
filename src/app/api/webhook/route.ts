@@ -162,31 +162,40 @@ export async function POST(request: NextRequest) {
             ? `Hvala na donaciji za film ${filmTitle}!`
             : `Thank you for your donation to ${filmTitle}!`;
 
+          const baseUrl = "https://filmglad.com";
+          const titleImage = locale === "sr" ? `${baseUrl}/email-title-sr.png` : `${baseUrl}/email-title-en.png`;
+
           const htmlContent = locale === "sr"
             ? `
-              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                <h1 style="color: #e11d48;">Hvala Vam, ${customerName || "dragi donatoru"}!</h1>
-                <p>Vaša donacija od <strong>€${amount}</strong> je uspešno primljena.</p>
-                <p>Sada ste naš <strong>${tierName}</strong> i vaše ime će biti prikazano u kredidima filma.</p>
-                <p>Vaša podrška pomaže da završimo ovaj važan film o mentalnom zdravlju i emocionalnoj gladi.</p>
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 30px;">
+                <div style="text-align: center; margin-bottom: 30px;">
+                  <img src="${titleImage}" alt="GLAD" width="300" style="max-width: 100%; height: auto;" />
+                </div>
+                <h2 style="font-size: 24px; margin-bottom: 20px;">Hvala Vam, ${customerName || "dragi donatoru"}!</h2>
+                <p style="line-height: 1.6;">Vaša donacija od <strong style="color: #e11d48;">€${amount}</strong> je uspešno primljena.</p>
+                <p style="line-height: 1.6;">Sada ste naš <strong>${tierName}</strong> i vaše ime će biti prikazano u odjavnoj špici filma.</p>
+                <p style="line-height: 1.6;">Vaša podrška pomaže da završimo ovaj važan film o mentalnom zdravlju i emocionalnoj gladi.</p>
                 <br/>
                 <p>Sa zahvalnošću,<br/><strong>Tim filma GLAD</strong></p>
-                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;"/>
-                <p style="color: #666; font-size: 12px;">
+                <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;"/>
+                <p style="color: #888; font-size: 12px; text-align: center;">
                   Deo prihoda od donacija ide u kampanje za podizanje svesti o mentalnom zdravlju.
                 </p>
               </div>
             `
             : `
-              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                <h1 style="color: #e11d48;">Thank you, ${customerName || "dear donor"}!</h1>
-                <p>Your donation of <strong>€${amount}</strong> has been successfully received.</p>
-                <p>You are now a <strong>${tierName}</strong> and your name will be displayed in the film credits.</p>
-                <p>Your support helps us complete this important film about mental health and emotional hunger.</p>
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 30px;">
+                <div style="text-align: center; margin-bottom: 30px;">
+                  <img src="${titleImage}" alt="HUNGER" width="300" style="max-width: 100%; height: auto;" />
+                </div>
+                <h2 style="font-size: 24px; margin-bottom: 20px;">Thank you, ${customerName || "dear donor"}!</h2>
+                <p style="line-height: 1.6;">Your donation of <strong style="color: #e11d48;">€${amount}</strong> has been successfully received.</p>
+                <p style="line-height: 1.6;">You are now a <strong>${tierName}</strong> and your name will be displayed in the film credits.</p>
+                <p style="line-height: 1.6;">Your support helps us complete this important film about mental health and emotional hunger.</p>
                 <br/>
                 <p>With gratitude,<br/><strong>The HUNGER Film Team</strong></p>
-                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;"/>
-                <p style="color: #666; font-size: 12px;">
+                <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;"/>
+                <p style="color: #888; font-size: 12px; text-align: center;">
                   A portion of donation proceeds goes to mental health awareness campaigns.
                 </p>
               </div>
