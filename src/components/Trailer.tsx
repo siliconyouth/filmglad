@@ -3,37 +3,16 @@
 import { useTranslations } from "next-intl";
 import { Play } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
-interface TrailerProps {
-  videoUrl?: string;
-}
+const YOUTUBE_VIDEO_ID = "rNeIqYR_rB0";
 
-export default function Trailer({ videoUrl }: TrailerProps) {
+export default function Trailer() {
   const t = useTranslations("trailer");
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Extract video ID from YouTube or Vimeo URL
-  const getEmbedUrl = (url: string) => {
-    // YouTube
-    const youtubeMatch = url.match(
-      /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/
-    );
-    if (youtubeMatch) {
-      return `https://www.youtube.com/embed/${youtubeMatch[1]}?autoplay=1`;
-    }
-
-    // Vimeo
-    const vimeoMatch = url.match(/vimeo\.com\/(\d+)/);
-    if (vimeoMatch) {
-      return `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1`;
-    }
-
-    return url;
-  };
-
-  // Default placeholder - replace with actual trailer URL
-  const trailerUrl = videoUrl || "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-  const embedUrl = getEmbedUrl(trailerUrl);
+  const embedUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`;
+  const thumbnailUrl = `https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`;
 
   return (
     <section id="trailer" className="py-24 bg-background">
@@ -55,14 +34,24 @@ export default function Trailer({ videoUrl }: TrailerProps) {
               onClick={() => setIsPlaying(true)}
               className="absolute inset-0 flex flex-col items-center justify-center group"
             >
-              {/* Placeholder thumbnail - replace with actual thumbnail */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black" />
+              {/* YouTube thumbnail */}
+              <Image
+                src={thumbnailUrl}
+                alt="GLAD trailer thumbnail"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                priority
+              />
+
+              {/* Dark overlay for better contrast */}
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
 
               <div className="relative z-10 flex flex-col items-center gap-4">
-                <div className="w-20 h-20 rounded-full bg-accent/90 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all">
+                <div className="w-20 h-20 rounded-full bg-accent/90 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all shadow-2xl">
                   <Play className="w-8 h-8 text-background ml-1" fill="currentColor" />
                 </div>
-                <span className="text-lg font-medium text-foreground">
+                <span className="text-lg font-medium text-foreground drop-shadow-lg">
                   {t("watchNow")}
                 </span>
               </div>
