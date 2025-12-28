@@ -5,8 +5,8 @@ import { kv } from "@vercel/kv";
 
 const initialDonors = [
   {
-    id: "seed_lisa_boneta",
-    name: "Lisa Boneta",
+    id: "seed_lisa_kovacevic",
+    name: "Lisa Kovačević",
     tier: "supporter",
     amount: 100,
     date: new Date().toISOString(),
