@@ -9,7 +9,7 @@ This is a Next.js TypeScript website for the movie "GLAD" (Serbian) / "HUNGER" (
 - **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 4
-- **Payments**: PayPal React SDK (@paypal/react-paypal-js)
+- **Payments**: Stripe (@stripe/stripe-js, stripe)
 - **i18n**: next-intl for Serbian/English localization
 - **Icons**: Lucide React
 - **Analytics**: Vercel Analytics
@@ -71,8 +71,9 @@ src/
 Create a `.env.local` file with:
 
 ```env
-# PayPal Configuration (Sandbox for dev, Live for production)
-NEXT_PUBLIC_PAYPAL_CLIENT_ID=your_paypal_client_id
+# Stripe Configuration
+# Get these from https://dashboard.stripe.com/apikeys
+STRIPE_SECRET_KEY=sk_live_... (or sk_test_... for development)
 
 # Optional: Database for storing donors (if implemented)
 DATABASE_URL=your_database_url

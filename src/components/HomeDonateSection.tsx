@@ -5,13 +5,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { Heart, ArrowRight, CreditCard } from "lucide-react";
 import DonateButton from "./DonateButton";
-import PayPalProvider from "./PayPalProvider";
 
 const tierAmounts = [100, 250, 500, 1000, 2500];
 
 export default function HomeDonateSection() {
   const t = useTranslations("donate");
-  const tTiers = useTranslations("tiers");
   const locale = useLocale();
   const [amount, setAmount] = useState(1000);
   const [selectedTier, setSelectedTier] = useState<number | null>(1000);
@@ -81,15 +79,13 @@ export default function HomeDonateSection() {
           </div>
         </div>
 
-        {/* Payment buttons */}
+        {/* Payment button */}
         <div className="max-w-md mx-auto mb-6">
           <div className="flex items-center justify-center gap-2 text-sm text-muted mb-3">
             <CreditCard className="w-4 h-4" />
-            <span>Card, Debit & PayPal accepted</span>
+            <span>Secure payment via Stripe</span>
           </div>
-          <PayPalProvider>
-            <DonateButton amount={amount} />
-          </PayPalProvider>
+          <DonateButton amount={amount} />
         </div>
 
         <Link

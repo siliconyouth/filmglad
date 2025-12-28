@@ -1,131 +1,68 @@
 "use client";
 
-import { PayPalButtons, usePayPalScriptReducer, FUNDING } from "@paypal/react-paypal-js";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useState } from "react";
-import { Check, AlertCircle, Loader2 } from "lucide-react";
+import { CreditCard, Loader2 } from "lucide-react";
 
 interface DonateButtonProps {
   amount?: number;
-  onSuccess?: (orderId: string) => void;
   className?: string;
 }
 
 export default function DonateButton({
-  amount = 10,
-  onSuccess,
+  amount = 100,
   className = "",
 }: DonateButtonProps) {
   const t = useTranslations("donate");
-  const [{ isPending }] = usePayPalScriptReducer();
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const locale = useLocale();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const createOrder = () => {
-    return {
-      intent: "CAPTURE" as const,
-      purchase_units: [
-        {
-          amount: {
-            value: amount.toString(),
-            currency_code: "EUR",
-          },
-          description: "GLAD Film Donation - Mental Health Awareness",
-        },
-      ],
-    };
-  };
+  const handleCheckout = async () => {
+    setIsLoading(true);
 
-  const handleApprove = async (data: unknown, actions: { order?: { capture: () => Promise<{ id?: string }> } }) => {
     try {
-      const order = await actions.order?.capture();
-      if (order) {
-        setStatus("success");
-        if (order.id) {
-          onSuccess?.(order.id);
-        }
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ amount, locale }),
+      });
+
+      const data = await response.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        console.error("No checkout URL returned");
+        setIsLoading(false);
       }
-    } catch (err) {
-      console.error("Payment error:", err);
-      setStatus("error");
+    } catch (error) {
+      console.error("Checkout error:", error);
+      setIsLoading(false);
     }
   };
 
-  const handleError = () => {
-    setStatus("error");
-  };
-
-  if (isPending) {
-    return (
-      <div className={`flex items-center justify-center p-4 ${className}`}>
-        <Loader2 className="w-6 h-6 animate-spin text-accent" />
-        <span className="ml-2 text-muted">{t("processing")}</span>
-      </div>
-    );
-  }
-
-  if (status === "success") {
-    return (
-      <div className={`flex items-center justify-center gap-2 p-4 bg-green-900/30 rounded-lg ${className}`}>
-        <Check className="w-6 h-6 text-green-400" />
-        <span className="text-green-400">{t("success")}</span>
-      </div>
-    );
-  }
-
-  if (status === "error") {
-    return (
-      <div className={`flex flex-col items-center gap-2 p-4 bg-red-900/30 rounded-lg ${className}`}>
-        <div className="flex items-center gap-2">
-          <AlertCircle className="w-6 h-6 text-red-400" />
-          <span className="text-red-400">{t("error")}</span>
-        </div>
-        <button
-          onClick={() => setStatus("idle")}
-          className="text-sm text-muted hover:text-foreground transition-colors"
-        >
-          Try again
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <div className={`w-full space-y-3 ${className}`}>
-      {/* Card/Debit Button */}
-      <PayPalButtons
-        key={`card-${amount}`}
-        forceReRender={[amount]}
-        fundingSource={FUNDING.CARD}
-        style={{
-          layout: "horizontal",
-          color: "black",
-          shape: "rect",
-          label: "pay",
-          height: 50,
-        }}
-        createOrder={(data, actions) => actions.order.create(createOrder())}
-        onApprove={handleApprove}
-        onError={handleError}
-        onCancel={() => setStatus("idle")}
-      />
-
-      {/* PayPal Button */}
-      <PayPalButtons
-        key={`paypal-${amount}`}
-        forceReRender={[amount]}
-        fundingSource={FUNDING.PAYPAL}
-        style={{
-          layout: "horizontal",
-          color: "gold",
-          shape: "rect",
-          label: "paypal",
-          height: 50,
-        }}
-        createOrder={(data, actions) => actions.order.create(createOrder())}
-        onApprove={handleApprove}
-        onError={handleError}
-        onCancel={() => setStatus("idle")}
-      />
-    </div>
+    <button
+      onClick={handleCheckout}
+      disabled={isLoading}
+      className={`w-full flex items-center justify-center gap-2 py-4 px-6 rounded-lg font-semibold text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed btn-gradient hover:opacity-90 ${className}`}
+    >
+      {isLoading ? (
+        <>
+          <Loader2 className="w-5 h-5 animate-spin" />
+          <span>{t("processing")}</span>
+        </>
+      ) : (
+        <>
+          <CreditCard className="w-5 h-5" />
+          <span>
+            {t("title")} €{amount}
+          </span>
+        </>
+      )}
+    </button>
   );
 }
