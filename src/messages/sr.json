@@ -9,6 +9,7 @@
     "about": "O filmu",
     "news": "Vesti",
     "crew": "Ekipa",
+    "gallery": "Galerija",
     "contact": "Kontakt"
   },
   "hero": {
@@ -49,7 +50,13 @@
     "essence": "GLAD je film o povredama duše i ljubavi koja na kraju vraća muški i ženski princip. Opasan i neudoban. Inteligentan film."
   },
   "gallery": {
-    "title": "Galerija"
+    "title": "Galerija",
+    "subtitle": "Fotografije iz filma",
+    "viewAll": "Pogledaj sve fotografije",
+    "photoCount": "67 fotografija",
+    "close": "Zatvori",
+    "previous": "Prethodna",
+    "next": "Sledeća"
   },
   "trailer": {
     "title": "Trejler",

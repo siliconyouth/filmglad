@@ -9,6 +9,7 @@
     "about": "About",
     "news": "News",
     "crew": "Cast & Crew",
+    "gallery": "Gallery",
     "contact": "Contact"
   },
   "hero": {
@@ -49,7 +50,13 @@
     "essence": "HUNGER is a film about wounds of the soul and love that ultimately restores the masculine and feminine principle. Dangerous and uncomfortable. An intelligent film."
   },
   "gallery": {
-    "title": "Gallery"
+    "title": "Gallery",
+    "subtitle": "Stills from the film",
+    "viewAll": "View all photos",
+    "photoCount": "67 photos",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
   },
   "trailer": {
     "title": "Trailer",

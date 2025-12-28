@@ -50,6 +50,12 @@ export default function Header() {
               {t("nav.crew")}
             </Link>
             <Link
+              href={`/${locale}/gallery`}
+              className="text-sm hover:text-accent transition-colors"
+            >
+              {t("nav.gallery")}
+            </Link>
+            <Link
               href={`/${locale}/donate`}
               className="text-sm font-semibold px-5 py-2 rounded uppercase tracking-wider btn-gradient"
             >
