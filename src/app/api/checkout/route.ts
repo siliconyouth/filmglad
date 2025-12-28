@@ -41,6 +41,33 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: "payment",
+      billing_address_collection: "required",
+      custom_fields: [
+        {
+          key: "display_name",
+          label: {
+            type: "custom",
+            custom: locale === "sr" ? "Ime za prikaz u kredidima" : "Name for film credits",
+          },
+          type: "text",
+          optional: true,
+        },
+        {
+          key: "anonymous",
+          label: {
+            type: "custom",
+            custom: locale === "sr" ? "Anonimna donacija" : "Anonymous donation",
+          },
+          type: "dropdown",
+          dropdown: {
+            options: [
+              { label: locale === "sr" ? "Ne" : "No", value: "no" },
+              { label: locale === "sr" ? "Da" : "Yes", value: "yes" },
+            ],
+          },
+          optional: true,
+        },
+      ],
       success_url: `${origin}/${locale}/donate?success=true`,
       cancel_url: `${origin}/${locale}/donate?canceled=true`,
       metadata: {

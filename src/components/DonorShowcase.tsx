@@ -6,19 +6,25 @@ import { Crown, Award, Star, Medal, Heart } from "lucide-react";
 export interface Donor {
   id: string;
   name: string;
-  tier: "executive" | "producer" | "patron" | "supporter";
+  tier: "producer" | "executive" | "associate" | "patron" | "supporter";
   date: string;
   anonymous?: boolean;
 }
 
 const tierConfig = {
+  producer: {
+    icon: Crown,
+    color: "text-red-400",
+    bg: "bg-red-400/10",
+    border: "border-red-400/30",
+  },
   executive: {
     icon: Crown,
     color: "text-amber-400",
     bg: "bg-amber-400/10",
     border: "border-amber-400/30",
   },
-  producer: {
+  associate: {
     icon: Award,
     color: "text-purple-400",
     bg: "bg-purple-400/10",
@@ -48,8 +54,9 @@ export default function DonorShowcase({ donors = [] }: DonorShowcaseProps) {
 
   // Group donors by tier
   const groupedDonors = {
-    executive: donors.filter((d) => d.tier === "executive"),
     producer: donors.filter((d) => d.tier === "producer"),
+    executive: donors.filter((d) => d.tier === "executive"),
+    associate: donors.filter((d) => d.tier === "associate"),
     patron: donors.filter((d) => d.tier === "patron"),
     supporter: donors.filter((d) => d.tier === "supporter"),
   };
@@ -81,7 +88,7 @@ export default function DonorShowcase({ donors = [] }: DonorShowcaseProps) {
         </div>
 
         <div className="space-y-12">
-          {(["executive", "producer", "patron", "supporter"] as const).map(
+          {(["producer", "executive", "associate", "patron", "supporter"] as const).map(
             (tierKey) => {
               const tierDonors = groupedDonors[tierKey];
               if (tierDonors.length === 0) return null;
