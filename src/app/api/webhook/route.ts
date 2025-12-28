@@ -169,7 +169,7 @@ export async function POST(request: NextRequest) {
             ? `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 30px;">
                 <div style="text-align: center; margin-bottom: 30px;">
-                  <img src="${titleImage}" alt="GLAD" width="300" style="max-width: 100%; height: auto;" />
+                  <img src="${titleImage}" alt="GLAD" width="450" style="max-width: 100%; height: auto;" />
                 </div>
                 <h2 style="font-size: 24px; margin-bottom: 20px;">Hvala Vam, ${customerName || "dragi donatoru"}!</h2>
                 <p style="line-height: 1.6;">Vaša donacija od <strong style="color: #e11d48;">€${amount}</strong> je uspešno primljena.</p>
@@ -186,7 +186,7 @@ export async function POST(request: NextRequest) {
             : `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 30px;">
                 <div style="text-align: center; margin-bottom: 30px;">
-                  <img src="${titleImage}" alt="HUNGER" width="300" style="max-width: 100%; height: auto;" />
+                  <img src="${titleImage}" alt="HUNGER" width="450" style="max-width: 100%; height: auto;" />
                 </div>
                 <h2 style="font-size: 24px; margin-bottom: 20px;">Thank you, ${customerName || "dear donor"}!</h2>
                 <p style="line-height: 1.6;">Your donation of <strong style="color: #e11d48;">€${amount}</strong> has been successfully received.</p>
