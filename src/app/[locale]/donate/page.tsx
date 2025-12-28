@@ -1,10 +1,25 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Heart } from "lucide-react";
 import DonorTiers from "@/components/DonorTiers";
-import DonorShowcase from "@/components/DonorShowcase";
+import DonorShowcase, { Donor } from "@/components/DonorShowcase";
+import { kv } from "@vercel/kv";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
+}
+
+async function getDonors(): Promise<Donor[]> {
+  try {
+    const donorStrings = await kv.zrange("donors", 0, -1, { rev: true });
+    return donorStrings.map((str) => {
+      if (typeof str === "string") {
+        return JSON.parse(str);
+      }
+      return str as Donor;
+    });
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -22,6 +37,7 @@ export default async function DonatePage({ params }: PageProps) {
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "donate" });
+  const donors = await getDonors();
 
   return (
     <div className="pt-24 bg-gradient-to-b from-black/50 to-background">
@@ -48,7 +64,7 @@ export default async function DonatePage({ params }: PageProps) {
         </div>
       </section>
 
-      <DonorShowcase />
+      <DonorShowcase donors={donors} />
     </div>
   );
 }
